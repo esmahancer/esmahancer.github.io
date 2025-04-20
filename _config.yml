@@ -18,6 +18,15 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+
+plugins:
+  - jekyll-remote-theme    # so the theme can be fetched at build time
+  - jekyll-include-cache   # provides the include_cached tag
+  - jekyll-feed            # optional: RSS feed
+  - jekyll-seo-tag         # optional: metadata for social & search
+
+
 title: "exotic sphere"
 email: "hanceresma55@gmail.com"
 description: >- # this means to ignore newlines until "baseurl:"
@@ -28,11 +37,7 @@ github_username:  "esmahancer"
 
 # Build settings
 # tell Jekyll to use the remote Minimal Mistakes theme:
-theme: "minimal-mistakes-jekyll"
-
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
+# tell GitHub Pages to grab Minimal Mistakes from GitHub:
 
 #theme: minima
 #plugins:

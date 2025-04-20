@@ -8,8 +8,16 @@ source "https://rubygems.org"
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
 #gem "jekyll", "~> 4.4.1"
-gem "jekyll", "~> 4.4"
-gem "minimal-mistakes-jekyll", "~> 4.24.0"
+# for jekyll serve under Ruby ≥3.0
+gem "webrick", "~> 1.7"
+
+# optional—silence CSV/fiddle deprecation warnings
+# gem "csv"
+# gem "fiddle"
+
+gem "github-pages", "~> 228", group: :jekyll_plugins
+# Needed by Minimal Mistakes for its `include_cached` tags:
+gem "jekyll-include-cache", "~> 0.1", group: :jekyll_plugins
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 
        # so Jekyll can pull themes from GitHub
@@ -20,11 +28,6 @@ gem "minima", "~> 2.5"
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
 # gem "github-pages", group: :jekyll_plugins
 # If you have any plugins, put them here!
-group :jekyll_plugins do
-  gem "jekyll-feed"        # optional RSS
-  gem "jekyll-seo-tag"     # optional SEO tags
-end
-
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
 platforms :mingw, :x64_mingw, :mswin, :jruby do
